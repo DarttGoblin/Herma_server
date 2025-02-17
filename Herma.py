@@ -4,7 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, origins=["https://darttgoblin.github.io"])
+CORS(app, resources={r"/*": {"origins": "https://darttgoblin.github.io"}})
 
 with open('Herma.pkl', 'rb') as pipeline_file:
     herma = pickle.load(pipeline_file)
