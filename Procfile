@@ -1,1 +1,1 @@
-web: python Herma.py
+web: gunicorn Herma:app
