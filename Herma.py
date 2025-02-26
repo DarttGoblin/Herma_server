@@ -5,13 +5,14 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 # Configure CORS to allow requests from your GitHub Pages domain
-CORS(app, resources={
-    r"/*": {
-        "origins": ["https://darttgoblin.github.io"],
-        "methods": ["POST", "OPTIONS"],
-        "allow_headers": ["Content-Type"]
-    }
-})
+CORS(app)
+#      , resources={
+#     r"/*": {
+#         "origins": ["https://darttgoblin.github.io"],
+#         "methods": ["POST", "OPTIONS"],
+#         "allow_headers": ["Content-Type"]
+#     }
+# })
 
 # Load the model
 with open('Herma.pkl', 'rb') as pipeline_file:
